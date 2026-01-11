@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AthexPix | Walls that match your vibe</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="logo">
+            <i class="fa-solid fa-layer-group"></i> AthexPix
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#gallery">Explore</a>
+        </div>
+        <div class="nav-actions">
+            <button class="icon-btn theme-toggle"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="animate-up">AthexPix</h1>
+            <p class="tagline animate-up delay-1">Walls that match your vibe</p>
+            <p class="tagline animate-up delay-1">~AthexDev</p>
+
+            <div class="search-container glass animate-up delay-2">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search wallpapers...">
+            </div>
+
+            <div class="hero-buttons animate-up delay-3">
+                <button class="btn-primary" onclick="scrollToGallery()">Explore Wallpapers</button>
+            </div>
+        </div>
+
+        <!-- Video Background -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline id="heroVideo">
+                <source src="Video-286.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <section class="categories-section" id="categories">
+        <div class="filters-container">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="Linux">Linux</button>
+            <button class="filter-btn" data-category="Nature">Nature</button>
+            <button class="filter-btn" data-category="Anime">Anime</button>
+            <button class="filter-btn" data-category="Cars">Cars</button>
+            <button class="filter-btn" data-category="Minimal">Minimal</button>
+            <button class="filter-btn" data-category="Space">Space</button>
+
+        </div>
+    </section>
+
+    <!-- Wallpaper Gallery -->
+    <main id="gallery" class="gallery-section">
+        <div class="gallery-grid" id="wallpaperGrid">
+            <!-- Wallpapers will be injected here by JS -->
+        </div>
+        <div id="loading" class="loading-spinner hidden">
+            <div class="spinner"></div>
+        </div>
+        <div id="noResults" class="no-results hidden">
+            <i class="fa-regular fa-face-sad-tear"></i>
+            <p>No wallpapers found matching your search.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>AthexPix</h2>
+                <p>Walls that match your vibe</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/Athexdev"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/codewithdebeshh"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/debesh-nayak-247252369"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://t.me/dark_athex09"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AthexPix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Preview Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Wallpaper Preview">
+                </div>
+                <div class="modal-info">
+                    <div class="info-left">
+                        <h2 id="modalTitle">Wallpaper Title</h2>
+                        <div class="tags">
+                            <span id="modalCategory" class="badge">Category</span>
+                            <span id="modalResolution" class="badge outline">4K</span>
+                        </div>
+                    </div>
+                    <div class="info-right">
+                        <button id="modalLikeBtn" class="icon-btn large"><i class="fa-regular fa-heart"></i></button>
+                        <button id="modalDownloadBtn" class="btn-primary download-large">
+                            Download <i class="fa-solid fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
